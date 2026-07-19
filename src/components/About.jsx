@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Sparkle from './Sparkle'
-import { TribalFlame, Chain, HalftoneStar } from './ChromeElements'
+import { Chain, HalftoneStar } from './ChromeElements'
 
 const skills = [
   { label: 'Figma', size: 16 }, { label: 'React', size: 14 }, { label: 'UX Research', size: 13 },
@@ -14,7 +14,6 @@ export default function About() {
     <section id="about" style={{ position: 'relative', overflow: 'hidden', padding: '80px 40px', borderTop: '1px solid #1c1c1c' }}>
 
       {/* decorative */}
-      <TribalFlame size={150} color="#ffffff" opacity={0.07} rotate={-20} style={{ left: -30, bottom: '10%' }} delay={2.5} />
       <Chain height={280} color="#888888" opacity={0.2} style={{ right: 20, top: '5%' }} delay={0} />
       <HalftoneStar size={180} opacity={0.08} style={{ right: '15%', top: '20%' }} delay={1} />
 
