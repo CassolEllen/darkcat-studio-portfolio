@@ -90,10 +90,12 @@ export default function Projects() {
       }} />
 
       {/* cards */}
-      <div style={{ background: '#1c1c1c', display: 'grid', gap: 1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
         {projects.map((project, i) => (
           <div key={i}>
+            <div style={{ height: 40, background: '#080808' }} />
             <ProjectCard project={project} index={i} />
+            <div style={{ height: 40, background: '#080808' }} />
             {i < projects.length - 1 && <MarqueeDivider />}
           </div>
         ))}

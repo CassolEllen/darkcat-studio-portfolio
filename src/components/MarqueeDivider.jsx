@@ -1,37 +1,21 @@
 import { motion } from 'framer-motion'
 
-const CatFaceSVG = () => (
-  <svg width="64" height="64" viewBox="0 0 100 100" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
-    {/* ears */}
-    <polygon points="18,12 8,40 32,35" fill="#1a1a1a" />
-    <polygon points="82,12 92,40 68,35" fill="#1a1a1a" />
-    <polygon points="20,16 12,36 30,32" fill="#2d2d2d" />
-    <polygon points="80,16 88,36 70,32" fill="#2d2d2d" />
-    {/* head */}
-    <ellipse cx="50" cy="60" rx="38" ry="35" fill="#1a1a1a" />
-    {/* eyes */}
-    <ellipse cx="34" cy="52" rx="8" ry="9" fill="#080808" />
-    <ellipse cx="66" cy="52" rx="8" ry="9" fill="#080808" />
-    {/* pupils */}
-    <ellipse cx="35" cy="53" rx="4" ry="6" fill="#ff2d78" />
-    <ellipse cx="67" cy="53" rx="4" ry="6" fill="#ff2d78" />
-    {/* eye shine */}
-    <circle cx="37" cy="50" r="2" fill="#fff" opacity="0.8" />
-    <circle cx="69" cy="50" r="2" fill="#fff" opacity="0.8" />
-    {/* nose */}
-    <polygon points="50,64 46,70 54,70" fill="#ff2d78" />
-    {/* mouth */}
-    <path d="M44,72 Q50,78 56,72" stroke="#333" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-    {/* whiskers */}
-    <line x1="8" y1="65" x2="38" y2="68" stroke="#333" strokeWidth="1" />
-    <line x1="8" y1="70" x2="38" y2="71" stroke="#333" strokeWidth="1" />
-    <line x1="62" y1="68" x2="92" y2="65" stroke="#333" strokeWidth="1" />
-    <line x1="62" y1="71" x2="92" y2="70" stroke="#333" strokeWidth="1" />
-    {/* star mark */}
-    <path d="M26,45 L28,38 L30,45 L37,43 L32,48 L34,55 L28,51 L22,55 L24,48 L19,43Z" fill="#ff2d78" opacity="0.7" />
-  </svg>
+// apaga o componente CatFaceSVG inteiro e substitui por:
+const CatStencil = () => (
+  <img
+    src="/cat-stencil.png"
+    alt="DarkCat"
+    style={{
+      width: 64,
+      height: 64,
+      objectFit: 'contain',
+      mixBlendMode: 'screen',
+      filter: 'contrast(1.8) brightness(1.2) grayscale(1) invert(1)',
+      display: 'inline-block',
+      verticalAlign: 'middle',
+    }}
+  />
 )
-
 const marqueeText = '✦ DARKCAT STUDIO · 2025 // SELECTED WORK · '
 
 export default function MarqueeDivider() {
@@ -42,7 +26,7 @@ export default function MarqueeDivider() {
       background: '#0a0a0a',
       borderTop: '1px solid #1c1c1c',
       borderBottom: '1px solid #1c1c1c',
-      height: 80,
+      height: 104,
       display: 'flex',
       alignItems: 'center',
       position: 'relative',
@@ -81,7 +65,7 @@ export default function MarqueeDivider() {
           animate={{ y: [0, -4, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <CatFaceSVG />
+          <CatStencil />
         </motion.div>
 
         {/* sparkle right */}
