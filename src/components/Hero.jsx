@@ -1,34 +1,6 @@
 import { motion } from 'framer-motion'
-import { ChromeStarOutline, TribalFlame, ChromeSparkle, HalftoneStar } from './ChromeElements'
+import { ChromeStarOutline, ChromeSparkle, HalftoneStar, Chain } from './ChromeElements'
 import Sparkle from './Sparkle'
-
-const titleVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.06 } },
-}
-
-const letterVariants = {
-  hidden: { opacity: 0, y: 80 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-}
-
-function AnimatedTitle({ text, className }) {
-  return (
-    <motion.span
-      className={className}
-      variants={titleVariants}
-      initial="hidden"
-      animate="visible"
-      style={{ display: 'inline-block', overflow: 'hidden' }}
-    >
-      {text.split('').map((char, i) => (
-        <motion.span key={i} variants={letterVariants} style={{ display: 'inline-block' }}>
-          {char}
-        </motion.span>
-      ))}
-    </motion.span>
-  )
-}
 
 export default function Hero() {
   const pills = ['Design', 'Code', 'Figma', 'React', 'UX Research']
@@ -57,14 +29,15 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* chrome star top-right */}
-      <ChromeStarOutline size={280} style={{ top: -60, right: -60 }} />
+      {/* chrome stars — large, rotating, bleeding off edges */}
+      <ChromeStarOutline size={320} style={{ top: -80, right: -80 }} />
+      <ChromeStarOutline size={220} style={{ bottom: -60, left: -60 }} />
+      <ChromeStarOutline size={180} style={{ top: '30%', right: -50 }} />
 
-      {/* tribal flame left */}
-      <TribalFlame
-        size={160} color="#ffffff" opacity={0.07} rotate={-15}
-        style={{ left: -40, top: '20%' }} delay={0}
-      />
+      {/* chains with sparkles */}
+      <Chain height={320} color="#888888" opacity={0.22} style={{ left: 60, top: '5%' }} delay={0} />
+      <Chain height={260} color="#ff2d78" opacity={0.18} style={{ right: 180, top: '15%' }} delay={1} />
+      <Chain height={200} color="#cccccc" opacity={0.15} style={{ left: '40%', bottom: '5%' }} delay={2} />
 
       {/* halftone stars background */}
       <HalftoneStar size={180} opacity={0.08} style={{ top: '10%', left: '35%' }} delay={0} />
@@ -96,7 +69,6 @@ export default function Hero() {
 
       {/* CONTENT */}
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 700 }}>
-        {/* eyebrow */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,19 +82,6 @@ export default function Hero() {
           // UX · UI · FRONTEND DEV · DarkCat ✦
         </motion.p>
 
-        {/* main title */}
-        <h1 style={{ lineHeight: 0.85, marginBottom: 16, overflow: 'hidden' }}>
-          <div>
-            <AnimatedTitle
-              text="DARK"
-              className=""
-              // inline style via motion — override below
-            />
-            {/* We need inline styles on the spans, do it differently */}
-          </div>
-        </h1>
-
-        {/* title rebuilt cleanly */}
         <div style={{ marginBottom: 8, overflow: 'hidden' }}>
           <motion.div
             initial={{ y: 120, opacity: 0 }}
@@ -131,9 +90,7 @@ export default function Hero() {
             style={{
               fontFamily: '"Bebas Neue", sans-serif',
               fontSize: 'clamp(80px, 14vw, 130px)',
-              lineHeight: 0.85,
-              color: '#f0ece8',
-              letterSpacing: '-1px',
+              lineHeight: 0.85, color: '#f0ece8', letterSpacing: '-1px',
             }}
           >
             DARK
@@ -148,9 +105,7 @@ export default function Hero() {
             style={{
               fontFamily: '"Bebas Neue", sans-serif',
               fontSize: 'clamp(80px, 14vw, 130px)',
-              lineHeight: 0.85,
-              color: '#ff2d78',
-              letterSpacing: '-1px',
+              lineHeight: 0.85, color: '#ff2d78', letterSpacing: '-1px',
             }}
           >
             CAT
@@ -165,17 +120,14 @@ export default function Hero() {
             style={{
               fontFamily: '"Bebas Neue", sans-serif',
               fontSize: 'clamp(40px, 7vw, 68px)',
-              lineHeight: 0.85,
-              color: 'transparent',
-              WebkitTextStroke: '1px #2a2a2a',
-              letterSpacing: '4px',
+              lineHeight: 0.85, color: 'transparent',
+              WebkitTextStroke: '1px #2a2a2a', letterSpacing: '4px',
             }}
           >
             STUDIO
           </motion.div>
         </div>
 
-        {/* descriptor */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,7 +144,6 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* pills */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -200,23 +151,19 @@ export default function Hero() {
           style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}
         >
           {pills.map((pill, i) => (
-            <span
-              key={pill}
-              style={{
-                fontFamily: '"Space Grotesk", sans-serif',
-                fontSize: 9, fontWeight: 700, letterSpacing: '3px',
-                textTransform: 'uppercase', padding: '5px 12px',
-                border: `1px solid ${i === 0 ? '#ff2d78' : '#1c1c1c'}`,
-                color: i === 0 ? '#ff2d78' : '#444',
-              }}
-            >
+            <span key={pill} style={{
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontSize: 9, fontWeight: 700, letterSpacing: '3px',
+              textTransform: 'uppercase', padding: '5px 12px',
+              border: `1px solid ${i === 0 ? '#ff2d78' : '#1c1c1c'}`,
+              color: i === 0 ? '#ff2d78' : '#444',
+            }}>
               {pill}
             </span>
           ))}
         </motion.div>
       </div>
 
-      {/* vertical text right */}
       <div style={{
         position: 'absolute', right: 32, top: '50%', transform: 'translateY(-50%)',
         fontFamily: '"Space Grotesk", sans-serif',
@@ -227,7 +174,6 @@ export default function Hero() {
         darkcatstudio.com.br · 2025
       </div>
 
-      {/* bottom border */}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0, height: 1,
         background: 'repeating-linear-gradient(90deg, #ff2d78 0, #ff2d78 3px, transparent 3px, transparent 10px)',
