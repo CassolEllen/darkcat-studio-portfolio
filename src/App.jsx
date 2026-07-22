@@ -16,22 +16,18 @@ export default function App() {
       transition={{ duration: 0.8 }}
       style={{ background: '#080808', minHeight: '100vh', position: 'relative' }}
     >
-      {/* SVG gradient/filter defs — invisible, just defines reusable SVG resources */}
       <SvgDefs />
-
-      {/* grain texture overlay */}
       <div className="grain" />
-
-      {/* custom cursor */}
       <Cursor />
 
-      {/* page */}
-      <Nav />
-      <Hero />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer />
+      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+        <Nav />
+        <Hero />
+        <Projects />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
     </motion.div>
   )
 }
