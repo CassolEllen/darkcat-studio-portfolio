@@ -19,15 +19,12 @@ export default function App() {
       <SvgDefs />
       <div className="grain" />
       <Cursor />
-
-      <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
-        <Nav />
-        <Hero />
-        <Projects />
-        <About />
-        <Contact />
-        <Footer />
-      </div>
+      <Nav />
+      <Hero />
+      <Projects />
+      <About />
+      <Contact />
+      <Footer />
     </motion.div>
   )
 }
