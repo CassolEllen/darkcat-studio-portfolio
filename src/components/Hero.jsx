@@ -93,7 +93,7 @@ export default function Hero() {
               lineHeight: 0.85, color: '#f0ece8', letterSpacing: '-1px',
             }}
           >
-            DARK
+            Ellen
           </motion.div>
         </div>
 
@@ -108,7 +108,7 @@ export default function Hero() {
               lineHeight: 0.85, color: '#ff2d78', letterSpacing: '-1px',
             }}
           >
-            CAT
+            Cassol
           </motion.div>
         </div>
 
