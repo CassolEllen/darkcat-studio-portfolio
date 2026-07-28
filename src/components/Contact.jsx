@@ -59,7 +59,7 @@ export default function Contact() {
 
         {/* email */}
         <motion.a
-          href="mailto:contato@darkcatstudio.com.br"
+          href="mailto:ellencassol89@gmail.com"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -77,7 +77,7 @@ export default function Contact() {
           whileHover={{ color: '#ff2d78' }}
         >
           {/* ── EDITE SEU EMAIL AQUI ── */}
-          contato@darkcatstudio.com.br
+          ellencassol89@gmail.com
         </motion.a>
 
         {/* social links */}
@@ -89,10 +89,9 @@ export default function Contact() {
           style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}
         >
           {[
-            { label: 'BEHANCE', href: 'https://behance.net/' },
-            { label: 'GITHUB', href: 'https://github.com/' },
-            { label: 'LINKEDIN', href: 'https://linkedin.com/in/' },
-          ].map((social) => (
+          { label: 'GITHUB', href: 'https://github.com/CassolEllen' },
+          { label: 'LINKEDIN', href: 'https://www.linkedin.com/in/ellen-cassol-881919209/' },
+        ].map((social) => (
             <a
               key={social.label}
               href={social.href}
