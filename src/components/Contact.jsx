@@ -40,7 +40,9 @@ export default function Contact() {
             marginBottom: 20,
           }}
         >
-          VAMOS FAZER<br />BARULHO JUNTOS?
+          <h2>
+          TEM UM PROJETO<br />QUE PRECISA DE ALMA?
+          </h2>
         </motion.h2>
 
         <motion.p
@@ -54,7 +56,7 @@ export default function Contact() {
             textTransform: 'uppercase', marginBottom: 40, fontWeight: 300,
           }}
         >
-          drop a message. let's build something that hits hard.
+          design que fala por si só. me chama.
         </motion.p>
 
         {/* email */}
