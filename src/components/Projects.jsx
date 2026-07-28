@@ -16,24 +16,7 @@ const projects = [
     live: 'https://cassolellen.github.io/travel-together-case/',
     liveLabel: 'VER LANDING PAGE',
   },
-  {
-    title: 'NOME DO PROJETO',
-    year: '2024',
-    type: 'Mobile · UX',
-    category: 'APP DESIGN',
-    description: 'Breve descrição do case — fale sobre o problema resolvido, a solução criada e o impacto gerado. Duas a três linhas bastam para despertar curiosidade.',
-    image: null,
-    live: null,
-  },
-  {
-    title: 'NOME DO PROJETO',
-    year: '2023',
-    type: 'Identidade Visual',
-    category: 'BRANDING',
-    description: 'Breve descrição do case — fale sobre o problema resolvido, a solução criada e o impacto gerado. Duas a três linhas bastam para despertar curiosidade.',
-    image: null,
-    live: null,
-  },
+  
 ]
 // ────────────────────────────────────────────────────────────────────────────
 
