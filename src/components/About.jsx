@@ -95,7 +95,7 @@ export default function About() {
 
             <p style={{
               fontFamily: '"Space Grotesk", sans-serif',
-              fontSize: 14, lineHeight: 1.8, color: '#555',
+              fontSize: 14, lineHeight: 1.8, color: '#ff2d78',
               marginBottom: 16, fontWeight: 300,
             }}>
               Sou designer e dev de Chapecó/SC — trabalho no cruzamento entre estética e código desde que entrei na área de TI, mas o design sempre foi onde meu cérebro realmente liga.
@@ -103,7 +103,7 @@ export default function About() {
 
             <p style={{
               fontFamily: '"Space Grotesk", sans-serif',
-              fontSize: 14, lineHeight: 1.8, color: '#444',
+              fontSize: 14, lineHeight: 1.8, color: '#ff2d78',
               marginBottom: 16, fontWeight: 300,
             }}>
               Especialista em landing pages que não deixam ninguém indiferente. Se a página não faz a pessoa parar de rolar, não tá pronta.
@@ -111,7 +111,7 @@ export default function About() {
 
             <p style={{
               fontFamily: '"Space Grotesk", sans-serif',
-              fontSize: 14, lineHeight: 1.8, color: '#333',
+              fontSize: 14, lineHeight: 1.8, color: '#706d6d',
               marginBottom: 32, fontWeight: 300, fontStyle: 'italic',
             }}>
               Design sem código é teoria. Código sem design é ferramenta.
@@ -138,10 +138,10 @@ export default function About() {
               </p>
               <p style={{
                 fontFamily: '"Space Grotesk", sans-serif',
-                fontSize: 10, color: '#333', letterSpacing: '2px',
+                fontSize: 10, color: '#727272', letterSpacing: '2px',
                 fontStyle: 'italic',
               }}>
-                — twenty one pilots · sim. com design e código.
+                — twenty one pilots
               </p>
             </motion.div>
           </motion.div>
@@ -152,7 +152,7 @@ export default function About() {
           <p style={{
             fontFamily: '"Space Grotesk", sans-serif',
             fontSize: 10, fontWeight: 700, letterSpacing: '4px',
-            color: '#333', textTransform: 'uppercase', marginBottom: 28,
+            color: '#727272', textTransform: 'uppercase', marginBottom: 28,
           }}>
             Stack & Skills
           </p>
