@@ -16,6 +16,17 @@ const projects = [
     live: 'https://cassolellen.github.io/travel-together-case/',
     liveLabel: 'VER LANDING PAGE',
   },
+
+  {
+  title: 'SUSHI ZEN',
+  year: '2026',
+  type: 'Landing Page',
+  category: 'LANDING PAGE',
+  description: 'Landing page para restaurante japonês — foco em experiência visual e conversão. Design minimalista com identidade forte e navegação fluida.',
+  image: null, // adiciona uma capa depois
+  live: 'https://cassolellen.github.io/sushi-zen-landing-page/',
+  liveLabel: 'VER LANDING PAGE',
+},
   
 ]
 // ────────────────────────────────────────────────────────────────────────────
