@@ -73,8 +73,8 @@ export default function ProjectCard({ project, index }) {
         <div style={{
           position: 'absolute', inset: 0,
           background: isEven
-            ? 'linear-gradient(to right, transparent 60%, #0a0a0a 100%)'
-            : 'linear-gradient(to left, transparent 60%, #0a0a0a 100%)',
+            ? 'linear-gradient(to right, transparent 80%, #f0b0c6 100%)'
+            : 'linear-gradient(to left, transparent 80%, #580b26 100%)',
           pointerEvents: 'none',
         }} />
         <span style={{
