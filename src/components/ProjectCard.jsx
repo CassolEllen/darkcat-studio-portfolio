@@ -70,13 +70,7 @@ export default function ProjectCard({ project, index }) {
           )
           : <GhostImagePlaceholder num={String(index + 1).padStart(2, '0')} accent="#ff2d78" />
         }
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: isEven
-            ? 'linear-gradient(to right, transparent 80%, #f0b0c6 100%)'
-            : 'linear-gradient(to left, transparent 80%, #580b26 100%)',
-          pointerEvents: 'none',
-        }} />
+        
         <span style={{
           position: 'absolute', bottom: 14,
           left: isEven ? 14 : 'auto', right: isEven ? 'auto' : 14,
