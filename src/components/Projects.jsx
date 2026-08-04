@@ -14,7 +14,7 @@ const projects = [
     description: 'Um aplicativo desenvolvido para coordenar trajetos, compartilhar mídias em tempo real, monitorar alertas de segurança e registrar os melhores momentos de viagens coletivas.',
     image: '/travel-together.webp',
     live: 'https://cassolellen.github.io/travel-together-case/',
-    liveLabel: 'VER LANDING PAGE',
+    liveLabel: 'VER PROJETO',
   },
 
   {
@@ -26,7 +26,18 @@ const projects = [
   image: '/sushi-zen.webp', 
   live: 'https://cassolellen.github.io/sushi-zen-landing-page/',
   liveLabel: 'VER LANDING PAGE',
-},
+  },
+
+  {
+  title: 'INKD',
+  year: '2026',
+  type: 'Mobile App · UX/UI',
+  category: 'APP DESIGN',
+  description: 'Plataforma de agendamento para estúdio de tatuagem — End-to-End App com estética Cyberpunk Y2K, 8+ componentes, Figma Prototypes e design system completo.',
+  image: '/inkd.webp',
+  live: 'https://cassolellen.github.io/inkd-tattoo-studio/',
+  liveLabel: 'VER PROJETO',
+  },
   
 ]
 // ────────────────────────────────────────────────────────────────────────────
