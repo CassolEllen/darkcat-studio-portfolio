@@ -56,14 +56,15 @@ export default function ProjectCard({ project, index }) {
             <motion.img
               src={project.image}
               alt={project.title}
+              loading="lazy"
+              decoding="async"
               style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'contain',
-                      objectPosition: 'center',
-                      display: 'block',
-                      background: '#0d0d0d',
-                    }}
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                display: 'block',
+              }}
               variants={{ hover: { scale: 1.04, filter: 'contrast(1.1) brightness(1.05)' } }}
               transition={{ duration: 0.4 }}
             />
