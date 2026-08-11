@@ -105,12 +105,8 @@ export default function ProjectCard({ project, index }) {
       background: '#0a0a0a',
       direction: isEven ? 'ltr' : 'rtl',
     }}>
-      <motion.div
-        style={{ position: 'relative', overflow: 'hidden', direction: 'ltr' }}
-        whileHover="hover"
-      >
+      <div style={{ position: 'relative', overflow: 'hidden', direction: 'ltr' }}>
         <ProjectCover project={project} />
-
         <span style={{
           position: 'absolute', bottom: 14,
           left: isEven ? 14 : 'auto', right: isEven ? 'auto' : 14,
@@ -121,16 +117,7 @@ export default function ProjectCard({ project, index }) {
         }}>
           {project.category}
         </span>
-
-        <motion.div
-          variants={{ hover: { scaleX: [0, 1, 0], opacity: [0, 0.15, 0] } }}
-          transition={{ duration: 0.4 }}
-          style={{
-            position: 'absolute', inset: 0, background: '#ff2d78',
-            pointerEvents: 'none', zIndex: 2, transformOrigin: 'left',
-          }}
-        />
-      </motion.div>
+      </div>
 
       <div style={{
         padding: '32px 28px',
