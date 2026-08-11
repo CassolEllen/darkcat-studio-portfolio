@@ -1,29 +1,106 @@
 import { motion } from 'framer-motion'
-import Sparkle from './Sparkle'
 
-function GhostImagePlaceholder({ num, accent }) {
+function ProjectCover({ project, isEven }) {
+  const covers = {
+    'TRAVEL TOGETHER': {
+      bg: '#F5F0E8',
+      accent: '#1B2B4B',
+      secondary: '#C4713A',
+      tag: 'MOBILE APP',
+    },
+    'SUSHI ZEN': {
+      bg: '#111111',
+      accent: '#CC0000',
+      secondary: '#ffffff',
+      tag: 'LANDING PAGE',
+    },
+    'INKD': {
+      bg: '#0A0A0A',
+      accent: '#AAFF00',
+      secondary: '#FF2D78',
+      tag: 'MOBILE APP',
+    },
+  }
+
+  const cover = covers[project.title] || {
+    bg: '#111111', accent: '#ff2d78', secondary: '#ffffff', tag: project.category,
+  }
+
   return (
     <div style={{
-      width: '100%', height: '100%', minHeight: 300,
-      background: '#0d0d0d', position: 'relative', overflow: 'hidden',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      width: '100%', height: '100%', minHeight: 320,
+      background: cover.bg,
+      position: 'relative', overflow: 'hidden',
+      display: 'flex', flexDirection: 'column',
+      justifyContent: 'space-between',
+      padding: '32px 28px',
     }}>
+      {/* tag top */}
       <span style={{
-        fontFamily: '"Bebas Neue", sans-serif',
-        fontSize: 120, color: '#f0ece8',
-        opacity: 0.04, lineHeight: 1,
-        position: 'absolute', bottom: 8, left: 16,
-        userSelect: 'none',
-      }}>{num}</span>
-      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" style={{ opacity: 0.06 }}>
-        <rect x="5" y="5" width="90" height="90" rx="2" stroke="#f0ece8" strokeWidth="1" />
-        <line x1="5" y1="5" x2="95" y2="95" stroke="#f0ece8" strokeWidth="0.5" />
-        <line x1="95" y1="5" x2="5" y2="95" stroke="#f0ece8" strokeWidth="0.5" />
-        <circle cx="50" cy="50" r="18" stroke="#f0ece8" strokeWidth="0.5" />
-      </svg>
-      <div style={{ position: 'absolute', bottom: 48, right: 24 }}>
-        <Sparkle type="four" color={accent} size={28} delay={0.2} duration={2.5} glow style={{ position: 'relative', top: 0, left: 0, right: 'auto', bottom: 'auto' }} />
+        fontFamily: '"Space Grotesk", sans-serif',
+        fontSize: 9, fontWeight: 700, letterSpacing: '4px',
+        color: cover.accent, textTransform: 'uppercase',
+        opacity: 0.6,
+      }}>
+        {cover.tag}
+      </span>
+
+      {/* big title */}
+      <div>
+        <h3 style={{
+          fontFamily: '"Bebas Neue", sans-serif',
+          fontSize: 'clamp(48px, 6vw, 80px)',
+          lineHeight: 0.9,
+          color: cover.accent,
+          letterSpacing: '-1px',
+          marginBottom: 16,
+        }}>
+          {project.title}
+        </h3>
+        <div style={{
+          width: 40, height: 3,
+          background: cover.accent,
+          opacity: 0.4,
+        }} />
       </div>
+
+      {/* year bottom */}
+      <span style={{
+        fontFamily: '"Space Grotesk", sans-serif',
+        fontSize: 11, fontWeight: 300, letterSpacing: '3px',
+        color: cover.accent, opacity: 0.4,
+      }}>
+        {project.year}
+      </span>
+
+      {/* decorative circles */}
+      <div style={{
+        position: 'absolute', width: 200, height: 200,
+        borderRadius: '50%', border: `1px solid ${cover.accent}`,
+        opacity: 0.08, right: -60, bottom: -60,
+      }} />
+      <div style={{
+        position: 'absolute', width: 120, height: 120,
+        borderRadius: '50%', border: `1px solid ${cover.accent}`,
+        opacity: 0.12, right: -20, bottom: -20,
+      }} />
+
+      {/* accent dot */}
+      <div style={{
+        position: 'absolute', width: 12, height: 12,
+        borderRadius: '50%', background: cover.secondary,
+        top: 32, right: 28,
+      }} />
+
+      {/* sparkle */}
+      <motion.svg
+        width="24" height="24" viewBox="0 0 60 60" fill="none"
+        style={{ position: 'absolute', bottom: 32, right: 28 }}
+        animate={{ rotate: [0, 360] }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+      >
+        <path d="M30,2 L34,26 L58,30 L34,34 L30,58 L26,34 L2,30 L26,26Z" fill={cover.accent} opacity="0.4" />
+      </motion.svg>
     </div>
   )
 }
@@ -46,30 +123,14 @@ export default function ProjectCard({ project, index }) {
         direction: isEven ? 'ltr' : 'rtl',
       }}
     >
-      {/* image side */}
+      {/* cover side */}
       <motion.div
         style={{ position: 'relative', overflow: 'hidden', direction: 'ltr' }}
         whileHover="hover"
       >
-        {project.image
-        ? (
-          <motion.img
-            src={project.image}
-            alt={project.title}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              display: 'block',
-            }}
-            variants={{ hover: { scale: 1.04, filter: 'contrast(1.1) brightness(1.05)' } }}
-            transition={{ duration: 0.4 }}
-          />
-        )
-        : <GhostImagePlaceholder num={String(index + 1).padStart(2, '0')} accent="#ff2d78" />
-      }
-        
+        <ProjectCover project={project} isEven={isEven} />
+
+        {/* badge */}
         <span style={{
           position: 'absolute', bottom: 14,
           left: isEven ? 14 : 'auto', right: isEven ? 'auto' : 14,
@@ -80,6 +141,8 @@ export default function ProjectCard({ project, index }) {
         }}>
           {project.category}
         </span>
+
+        {/* hover glitch */}
         <motion.div
           variants={{ hover: { scaleX: [0, 1, 0], opacity: [0, 0.15, 0] } }}
           transition={{ duration: 0.4 }}
@@ -123,7 +186,7 @@ export default function ProjectCard({ project, index }) {
           </p>
         </div>
 
-        {/* buttons — só renderiza se o link existir */}
+        {/* buttons */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {project.behance && (
             <a href={project.behance} target="_blank" rel="noopener noreferrer"
