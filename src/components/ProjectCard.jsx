@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-function ProjectCover({ project, isEven }) {
+function ProjectCover({ project }) {
   const covers = {
     'TRAVEL TOGETHER': {
       bg: '#F5F0E8',
@@ -35,7 +35,6 @@ function ProjectCover({ project, isEven }) {
       justifyContent: 'space-between',
       padding: '32px 28px',
     }}>
-      {/* tag top */}
       <span style={{
         fontFamily: '"Space Grotesk", sans-serif',
         fontSize: 9, fontWeight: 700, letterSpacing: '4px',
@@ -45,7 +44,6 @@ function ProjectCover({ project, isEven }) {
         {cover.tag}
       </span>
 
-      {/* big title */}
       <div>
         <h3 style={{
           fontFamily: '"Bebas Neue", sans-serif',
@@ -57,14 +55,9 @@ function ProjectCover({ project, isEven }) {
         }}>
           {project.title}
         </h3>
-        <div style={{
-          width: 40, height: 3,
-          background: cover.accent,
-          opacity: 0.4,
-        }} />
+        <div style={{ width: 40, height: 3, background: cover.accent, opacity: 0.4 }} />
       </div>
 
-      {/* year bottom */}
       <span style={{
         fontFamily: '"Space Grotesk", sans-serif',
         fontSize: 11, fontWeight: 300, letterSpacing: '3px',
@@ -73,7 +66,6 @@ function ProjectCover({ project, isEven }) {
         {project.year}
       </span>
 
-      {/* decorative circles */}
       <div style={{
         position: 'absolute', width: 200, height: 200,
         borderRadius: '50%', border: `1px solid ${cover.accent}`,
@@ -84,15 +76,11 @@ function ProjectCover({ project, isEven }) {
         borderRadius: '50%', border: `1px solid ${cover.accent}`,
         opacity: 0.12, right: -20, bottom: -20,
       }} />
-
-      {/* accent dot */}
       <div style={{
         position: 'absolute', width: 12, height: 12,
         borderRadius: '50%', background: cover.secondary,
         top: 32, right: 28,
       }} />
-
-      {/* sparkle */}
       <motion.svg
         width="24" height="24" viewBox="0 0 60 60" fill="none"
         style={{ position: 'absolute', bottom: 32, right: 28 }}
@@ -109,28 +97,20 @@ export default function ProjectCard({ project, index }) {
   const isEven = index % 2 === 0
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        minHeight: 300,
-        borderBottom: '1px solid #1c1c1c',
-        background: '#0a0a0a',
-        direction: isEven ? 'ltr' : 'rtl',
-      }}
-    >
-      {/* cover side */}
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      minHeight: 300,
+      borderBottom: '1px solid #1c1c1c',
+      background: '#0a0a0a',
+      direction: isEven ? 'ltr' : 'rtl',
+    }}>
       <motion.div
         style={{ position: 'relative', overflow: 'hidden', direction: 'ltr' }}
         whileHover="hover"
       >
-        <ProjectCover project={project} isEven={isEven} />
+        <ProjectCover project={project} />
 
-        {/* badge */}
         <span style={{
           position: 'absolute', bottom: 14,
           left: isEven ? 14 : 'auto', right: isEven ? 'auto' : 14,
@@ -142,7 +122,6 @@ export default function ProjectCard({ project, index }) {
           {project.category}
         </span>
 
-        {/* hover glitch */}
         <motion.div
           variants={{ hover: { scaleX: [0, 1, 0], opacity: [0, 0.15, 0] } }}
           transition={{ duration: 0.4 }}
@@ -153,7 +132,6 @@ export default function ProjectCard({ project, index }) {
         />
       </motion.div>
 
-      {/* content side */}
       <div style={{
         padding: '32px 28px',
         display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
@@ -186,7 +164,6 @@ export default function ProjectCard({ project, index }) {
           </p>
         </div>
 
-        {/* buttons */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {project.behance && (
             <a href={project.behance} target="_blank" rel="noopener noreferrer"
@@ -237,6 +214,6 @@ export default function ProjectCard({ project, index }) {
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
