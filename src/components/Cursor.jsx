@@ -6,8 +6,8 @@ export default function Cursor() {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
-  const springX = useSpring(mouseX, { stiffness: 200, damping: 20 })
-  const springY = useSpring(mouseY, { stiffness: 200, damping: 20 })
+  const springX = useSpring(mouseX, { stiffness: 800, damping: 40 })
+  const springY = useSpring(mouseY, { stiffness: 800, damping: 40 })
 
   useEffect(() => {
     const move = (e) => {
