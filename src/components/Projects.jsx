@@ -9,36 +9,40 @@ const projects = [
   {
     title: 'TRAVEL TOGETHER',
     year: '2026',
-    type: 'Product Design',
+    type: 'Mobile App · UX/UI',
     category: 'APP DESIGN',
     description: 'Um aplicativo desenvolvido para coordenar trajetos, compartilhar mídias em tempo real, monitorar alertas de segurança e registrar os melhores momentos de viagens coletivas.',
-    image: '/travel-together.webp',
     live: 'https://cassolellen.github.io/travel-together-case/',
+    liveLabel: 'VER PROJETO',
+  },
+  {
+    title: 'SUSHI ZEN',
+    year: '2026',
+    type: 'Landing Page',
+    category: 'LANDING PAGE',
+    description: 'Landing page para um restaurante de sushi artesanal japonês com delivery integrado. Navegação fluida pelo cardápio ao checkout rápido do pedido.',
+    live: 'https://cassolellen.github.io/sushi-zen-landing-page/',
+    liveLabel: 'VER LANDING PAGE',
+  },
+  {
+    title: 'INKD',
+    year: '2026',
+    type: 'Mobile App · UX/UI',
+    category: 'APP DESIGN',
+    description: 'Plataforma de agendamento para estúdio de tatuagem — End-to-End App com estética Cyberpunk Y2K, 8+ componentes, Figma Prototypes e design system completo.',
+    live: 'https://cassolellen.github.io/inkd-tattoo-studio/',
     liveLabel: 'VER PROJETO',
   },
 
   {
-  title: 'SUSHI ZEN',
+  title: 'PULSA FINTECH',
   year: '2026',
-  type: 'Landing Page',
-  category: 'LANDING PAGE',
-  description: 'Landing page para um restaurante de sushi artesanal japonês com delivery integrado. Navegação fluida pelo cardápio ao checkout rápido do pedido.',
-  image: '/sushi-zen.webp', 
-  live: 'https://cassolellen.github.io/sushi-zen-landing-page/',
-  liveLabel: 'VER LANDING PAGE',
-  },
-
-  {
-  title: 'INKD',
-  year: '2026',
-  type: 'Mobile App · UX/UI',
-  category: 'APP DESIGN',
-  description: 'Plataforma de agendamento para estúdio de tatuagem — End-to-End App com estética Cyberpunk Y2K, 8+ componentes, Figma Prototypes e design system completo.',
-  image: '/inkd.webp',
-  live: 'https://cassolellen.github.io/inkd-tattoo-studio/',
-  liveLabel: 'VER PROJETO',
-  },
-  
+  type: 'UX/UI · Mobile App',
+  category: 'FINTECH',
+  description: 'Carteira digital e cartão de crédito para freelancers, autônomos e MEIs com renda irregular. Crédito que acompanha o seu ritmo — do onboarding ao controle financeiro.',
+  live: 'https://cassolellen.github.io/pulsa-fintech/',
+  liveLabel: 'VER CASE STUDY',
+},
 ]
 // ────────────────────────────────────────────────────────────────────────────
 

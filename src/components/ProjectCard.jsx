@@ -20,6 +20,13 @@ function ProjectCover({ project }) {
       secondary: '#FF2D78',
       tag: 'MOBILE APP',
     },
+
+    'PULSA FINTECH': {
+      bg: '#121213',
+      accent: '#FF2D78',
+      secondary: '#1D1D20',
+      tag: 'FINTECH',
+    },
   }
 
   const cover = covers[project.title] || {
