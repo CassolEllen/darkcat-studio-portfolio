@@ -3,7 +3,7 @@ import { ChromeStarOutline, ChromeSparkle, HalftoneStar, Chain } from './ChromeE
 import Sparkle from './Sparkle'
 
 export default function Hero() {
-  const pills = ['Design', 'Code', 'Figma', 'React', 'UX Research']
+  const pills = ['Design', 'Code', 'Figma', 'React', 'Ui/UX']
 
   return (
     <section
