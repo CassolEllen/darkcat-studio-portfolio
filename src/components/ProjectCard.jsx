@@ -21,12 +21,24 @@ function ProjectCover({ project }) {
       tag: 'MOBILE APP',
     },
 
+    'MOKA CAFÉ': {
+      bg: '#F2E9DC',
+      accent: '#6B4F3A',
+      secondary: '#D4A857',
+      tag: 'LANDING PAGE',
+    },
     'PULSA FINTECH': {
       bg: '#121213',
       accent: '#FF2D78',
       secondary: '#1D1D20',
       tag: 'FINTECH',
     },
+    'FORCE STUDIO': {
+      bg: '#1F1F1F',
+      accent: '#C9962E',
+      secondary: '#FAFAF8',
+      tag: 'LANDING PAGE',
+},
   }
 
   const cover = covers[project.title] || {

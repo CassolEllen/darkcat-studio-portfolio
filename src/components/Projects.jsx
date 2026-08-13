@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'TRAVEL TOGETHER',
     year: '2026',
-    type: 'Mobile App · UX/UI',
+    type: 'Product Design',
     category: 'APP DESIGN',
     description: 'Um aplicativo desenvolvido para coordenar trajetos, compartilhar mídias em tempo real, monitorar alertas de segurança e registrar os melhores momentos de viagens coletivas.',
     live: 'https://cassolellen.github.io/travel-together-case/',
@@ -33,19 +33,34 @@ const projects = [
     live: 'https://cassolellen.github.io/inkd-tattoo-studio/',
     liveLabel: 'VER PROJETO',
   },
-
   {
-  title: 'PULSA FINTECH',
-  year: '2026',
-  type: 'UX/UI · Mobile App',
-  category: 'FINTECH',
-  description: 'Carteira digital e cartão de crédito para freelancers, autônomos e MEIs com renda irregular. Crédito que acompanha o seu ritmo — do onboarding ao controle financeiro.',
-  live: 'https://cassolellen.github.io/pulsa-fintech/',
-  liveLabel: 'VER CASE STUDY',
-},
+    title: 'MOKA CAFÉ',
+    year: '2026',
+    type: 'Landing Page',
+    category: 'LANDING PAGE',
+    description: 'Landing page para cafeteria artesanal com identidade visual aconchegante — do menu ao agendamento de reservas, com foco em conversão e experiência.',
+    live: 'https://cassolellen.github.io/moka-cafe/',
+    liveLabel: 'VER LANDING PAGE',
+  },
+  {
+    title: 'PULSA FINTECH',
+    year: '2026',
+    type: 'UX/UI · Mobile App',
+    category: 'FINTECH',
+    description: 'Carteira digital e cartão de crédito para freelancers, autônomos e MEIs com renda irregular. Crédito que acompanha o seu ritmo — do onboarding ao controle financeiro.',
+    live: 'https://cassolellen.github.io/pulsa-fintech/',
+    liveLabel: 'VER CASE STUDY',
+  },
+  {
+    title: 'FORCE STUDIO',
+    year: '2026',
+    type: 'Landing Page',
+    category: 'LANDING PAGE',
+    description: 'Landing page para academia com identidade forte e moderna — foco em captação de alunos, apresentação de planos e agendamento de aula experimental.',
+    live: 'https://cassolellen.github.io/force-studio-academia/',
+    liveLabel: 'VER LANDING PAGE',
+  },
 ]
-// ────────────────────────────────────────────────────────────────────────────
-
 export default function Projects() {
   return (
     <section id="work" style={{ position: 'relative', overflow: 'hidden' }}>
