@@ -86,3 +86,23 @@ body {
   max-width: 1600px;
   margin: 0 auto;
 }
+
+/* About responsivo */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-photo {
+    width: 200px !important;
+    margin: 0 auto;
+  }
+}
+
+/* Cards responsivos */
+@media (max-width: 768px) {
+  .project-card {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+  }
+}

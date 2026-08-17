@@ -3,10 +3,10 @@ import Sparkle from './Sparkle'
 import { Chain, HalftoneStar } from './ChromeElements'
 
 const skills = [
-  { label: 'Figma', size: 16 }, { label: 'React', size: 14 }, { label: 'UX Research', size: 13 },
-  { label: 'Tailwind', size: 15 }, { label: 'Design System', size: 12 }, { label: 'Framer Motion', size: 14 },
+  { label: 'Figma', size: 16 }, { label: 'React', size: 14 },
+  { label: 'Tailwind', size: 15 }, { label: 'Design System', size: 12 },
   { label: 'UI Design', size: 16 }, { label: 'Prototyping', size: 13 }, { label: 'CSS / SCSS', size: 15 },
-  { label: 'Accessibility', size: 12 }, { label: 'Branding', size: 14 }, { label: 'Next.js', size: 13 },
+  { label: 'Accessibility', size: 12 }, { label: 'App Design', size: 14 },
   { label: 'Landing Pages', size: 16 },
 ]
 
@@ -31,14 +31,14 @@ export default function About() {
         }}>// 02</span>
 
         {/* top grid — foto + bio */}
-        <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 60, marginBottom: 60, alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'min(280px, 100%) 1fr', gap: 40, marginBottom: 60, alignItems: 'start' }}>
 
           {/* foto */}
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8 }}         
             style={{ position: 'relative' }}
           >
             <img
