@@ -12,9 +12,8 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about" style={{ position: 'relative', overflow: 'hidden', padding: '80px 40px', borderTop: '1px solid #1c1c1c' }}>
+    <section id="about" style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px)', borderTop: '1px solid #1c1c1c' }}>
 
-      {/* decorative */}
       <Chain height={280} color="#888888" opacity={0.2} style={{ right: 20, top: '5%' }} delay={0} />
       <HalftoneStar size={180} opacity={0.08} style={{ right: '15%', top: '20%' }} delay={1} />
       <Sparkle type="four" color="#ff2d78" size={16} top="12%" left="60%" delay={0.5} duration={2.5} glow />
@@ -23,7 +22,6 @@ export default function About() {
 
       <div style={{ position: 'relative', zIndex: 2 }}>
 
-        {/* section label */}
         <span style={{
           fontFamily: '"Space Grotesk", sans-serif',
           fontSize: 10, fontWeight: 300, color: '#ff2d78',
@@ -31,15 +29,21 @@ export default function About() {
         }}>// 02</span>
 
         {/* top grid — foto + bio */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'min(280px, 100%) 1fr', gap: 40, marginBottom: 60, alignItems: 'start' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: 'clamp(24px, 5vw, 60px)',
+          marginBottom: 60,
+          alignItems: 'start',
+        }}>
 
           {/* foto */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}         
-            style={{ position: 'relative' }}
+            transition={{ duration: 0.8 }}
+            style={{ position: 'relative', maxWidth: 280 }}
           >
             <img
               src="/ellen.png"
@@ -53,14 +57,12 @@ export default function About() {
                 filter: 'contrast(1.05) saturate(0.9)',
               }}
             />
-            {/* pink border accent */}
             <div style={{
               position: 'absolute', top: 10, left: 10,
               right: -10, bottom: -10,
               border: '1px solid #ff2d78',
               zIndex: -1, opacity: 0.4,
             }} />
-            {/* sparkle on photo */}
             <motion.div
               style={{ position: 'absolute', top: -16, right: -16 }}
               animate={{ rotate: [0, 360] }}
@@ -79,23 +81,24 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            {/* ghost big SOBRE */}
             <div style={{ position: 'relative', marginBottom: 32 }}>
               <span style={{
                 fontFamily: '"Bebas Neue", sans-serif',
-                fontSize: 'clamp(60px, 8vw, 100px)',
+                fontSize: 'clamp(48px, 8vw, 100px)',
                 color: 'transparent', WebkitTextStroke: '1px #1a1a1a',
                 lineHeight: 1, display: 'block', userSelect: 'none',
               }}>SOBRE</span>
               <h2 style={{
-                fontFamily: '"Bebas Neue", sans-serif', fontSize: 52, color: '#f0ece8',
+                fontFamily: '"Bebas Neue", sans-serif',
+                fontSize: 'clamp(32px, 5vw, 52px)',
+                color: '#f0ece8',
                 position: 'absolute', bottom: -8, left: 0,
               }}>SOBRE</h2>
             </div>
 
             <p style={{
               fontFamily: '"Space Grotesk", sans-serif',
-              fontSize: 14, lineHeight: 1.8, color: '#ff2d78',
+              fontSize: 'clamp(13px, 2vw, 14px)', lineHeight: 1.8, color: '#ff2d78',
               marginBottom: 16, fontWeight: 300,
             }}>
               Sou designer e dev de Chapecó/SC — trabalho no cruzamento entre estética e código desde que entrei na área de TI, mas o design sempre foi onde meu cérebro realmente liga.
@@ -103,7 +106,7 @@ export default function About() {
 
             <p style={{
               fontFamily: '"Space Grotesk", sans-serif',
-              fontSize: 14, lineHeight: 1.8, color: '#ff2d78',
+              fontSize: 'clamp(13px, 2vw, 14px)', lineHeight: 1.8, color: '#ff2d78',
               marginBottom: 16, fontWeight: 300,
             }}>
               Especialista em landing pages que não deixam ninguém indiferente. Se a página não faz a pessoa parar de rolar, não tá pronta.
@@ -111,13 +114,12 @@ export default function About() {
 
             <p style={{
               fontFamily: '"Space Grotesk", sans-serif',
-              fontSize: 14, lineHeight: 1.8, color: '#706d6d',
+              fontSize: 'clamp(13px, 2vw, 14px)', lineHeight: 1.8, color: '#706d6d',
               marginBottom: 32, fontWeight: 300, fontStyle: 'italic',
             }}>
               Design sem código é teoria. Código sem design é ferramenta.
             </p>
 
-            {/* TOP quote */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -128,10 +130,12 @@ export default function About() {
                 border: '1px solid #1e1e1e',
                 transform: 'rotate(-1.5deg)',
                 display: 'inline-block',
+                maxWidth: '100%',
               }}
             >
               <p style={{
-                fontFamily: '"Bebas Neue", sans-serif', fontSize: 22,
+                fontFamily: '"Bebas Neue", sans-serif',
+                fontSize: 'clamp(16px, 3vw, 22px)',
                 color: '#f0ece8', lineHeight: 1.3, marginBottom: 8,
               }}>
                 "can you save, can you save my—<br />my heavydirtysoul?" ✦
@@ -171,7 +175,8 @@ export default function About() {
                 transition={{ duration: 0.4 }}
                 style={{
                   fontFamily: '"Space Grotesk", sans-serif',
-                  fontSize: skill.size, fontWeight: i % 3 === 0 ? 700 : 300,
+                  fontSize: 'clamp(11px, 2vw, 16px)',
+                  fontWeight: i % 3 === 0 ? 700 : 300,
                   color: i % 4 === 0 ? '#ff2d78' : i % 4 === 1 ? '#aaaaaa' : i % 4 === 2 ? '#f0ece8' : '#444',
                   letterSpacing: '1px', padding: '4px 0',
                   cursor: 'default',
