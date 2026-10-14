@@ -1,0 +1,118 @@
+import { motion } from 'framer-motion'
+import ProjectCard from './ProjectCard'
+import MarqueeDivider from './MarqueeDivider'
+import Sparkle from './Sparkle'
+import { HalftoneStar } from './ChromeElements'
+
+// ─── EDITE SEUS PROJETOS AQUI ───────────────────────────────────────────────
+const projects = [
+  {
+    title: 'TRAVEL TOGETHER',
+    year: '2026',
+    type: 'Product Design',
+    category: 'APP DESIGN',
+    description: 'Um aplicativo desenvolvido para coordenar trajetos, compartilhar mídias em tempo real, monitorar alertas de segurança e registrar os melhores momentos de viagens coletivas.',
+    live: 'https://cassolellen.github.io/travel-together-case/',
+    liveLabel: 'VER PROJETO',
+  },
+  {
+    title: 'SUSHI ZEN',
+    year: '2026',
+    type: 'Landing Page',
+    category: 'LANDING PAGE',
+    description: 'Landing page para um restaurante de sushi artesanal japonês com delivery integrado. Navegação fluida pelo cardápio ao checkout rápido do pedido.',
+    live: 'https://cassolellen.github.io/sushi-zen-landing-page/',
+    liveLabel: 'VER LANDING PAGE',
+  },
+  {
+    title: 'INKD',
+    year: '2026',
+    type: 'Mobile App · UX/UI',
+    category: 'APP DESIGN',
+    description: 'Plataforma de agendamento para estúdio de tatuagem — End-to-End App com estética Cyberpunk Y2K, 8+ componentes, Figma Prototypes e design system completo.',
+    live: 'https://cassolellen.github.io/inkd-tattoo-studio/',
+    liveLabel: 'VER PROJETO',
+  },
+  {
+    title: 'MOKA CAFÉ',
+    year: '2026',
+    type: 'Landing Page',
+    category: 'LANDING PAGE',
+    description: 'Landing page para cafeteria artesanal com identidade visual aconchegante — do menu ao agendamento de reservas, com foco em conversão e experiência.',
+    live: 'https://cassolellen.github.io/moka-cafe/',
+    liveLabel: 'VER LANDING PAGE',
+  },
+  {
+    title: 'PULSA FINTECH',
+    year: '2026',
+    type: 'UX/UI · Mobile App',
+    category: 'FINTECH',
+    description: 'Carteira digital e cartão de crédito para freelancers, autônomos e MEIs com renda irregular. Crédito que acompanha o seu ritmo — do onboarding ao controle financeiro.',
+    live: 'https://cassolellen.github.io/pulsa-fintech/',
+    liveLabel: 'VER CASE STUDY',
+  },
+  {
+    title: 'FORCE STUDIO',
+    year: '2026',
+    type: 'Landing Page',
+    category: 'LANDING PAGE',
+    description: 'Landing page para academia com identidade forte e moderna — foco em captação de alunos, apresentação de planos e agendamento de aula experimental.',
+    live: 'https://cassolellen.github.io/force-studio-academia/',
+    liveLabel: 'VER LANDING PAGE',
+  },
+]
+export default function Projects() {
+  return (
+    <section id="work" style={{ position: 'relative', overflow: 'hidden' }}>
+
+      {/* decorative */}
+      <HalftoneStar size={140} opacity={0.07} style={{ left: '5%', top: '30%' }} delay={2} />
+      <HalftoneStar size={100} opacity={0.06} style={{ right: '8%', bottom: '20%' }} delay={4} />
+      <Sparkle type="six" color="#ff2d78" size={14} top="8%" left="88%" delay={0.5} duration={2.8} glow />
+      <Sparkle type="cross" color="#aaaaaa" size={10} top="45%" left="3%" delay={1.5} duration={3.5} />
+      <Sparkle type="four" color="#ff2d78" size={16} bottom="25%" right="5%" delay={0.8} duration={2.2} glow />
+
+      {/* section header */}
+      <div style={{ padding: '40px 40px 20px', display: 'flex', alignItems: 'flex-end', gap: 16 }}>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <span style={{
+            fontFamily: '"Space Grotesk", sans-serif',
+            fontSize: 10, fontWeight: 300, color: '#ff2d78',
+            letterSpacing: '4px', display: 'block', marginBottom: 4,
+          }}>// 01</span>
+          <h2 style={{
+            fontFamily: '"Bebas Neue", sans-serif',
+            fontSize: 52, lineHeight: 1, color: '#f0ece8',
+          }}>
+            SELECTED<br />WORK
+          </h2>
+        </motion.div>
+        <div style={{ flex: 1, height: 1, background: '#1c1c1c', marginBottom: 10 }} />
+      </div>
+
+      {/* dashed rule */}
+      <div style={{
+        height: 1,
+        background: 'repeating-linear-gradient(90deg, #ff2d78 0, #ff2d78 3px, transparent 3px, transparent 10px)',
+        opacity: 0.2,
+      }} />
+
+      {/* cards */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+        {projects.map((project, i) => (
+          <div key={i}>
+            <div style={{ height: 40, background: '#080808' }} />
+            <ProjectCard project={project} index={i} />
+            <div style={{ height: 40, background: '#080808' }} />
+            {i < projects.length - 1 && <MarqueeDivider />}
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
